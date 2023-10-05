@@ -1,11 +1,11 @@
-﻿namespace ProvaPub.Services
+﻿
+namespace ProvaPub.Services
 {
-	public class RandomService
-	{		
-		public int GetRandom()
-		{
-			return new Random().Next(100);
-		}
-
-	}
+	public class RandomService 
+    {
+        public Task<int> GetRandom()
+        {
+            return  Task.Run(() => new Random().Next(100));
+        }
+    }
 }
